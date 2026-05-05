@@ -117,14 +117,14 @@
   </header><!-- End Header -->
 
 
-  <!-- ======= Sidebar ======= -->
+   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <!-- Dashboard -->
     <li class="nav-item">
       <a class="nav-link <?= ($page == 'index.php') ? '' : 'collapsed' ?>" href="index.php">
-        <i class="bi bi-speedometer2"></i>
+        <i class="bi bi-house-gear-fill"></i>
         <span>Dashboard</span>
       </a>
     </li>
@@ -132,7 +132,7 @@
     <!-- Kategori Produk -->
     <li class="nav-item">
       <a class="nav-link <?= ($page == 'kategory_produk.php') ? '' : 'collapsed' ?>" href="kategory_produk.php">
-        <i class="bi bi-tags"></i>
+       <i class="bi bi-bag-heart-fill"></i>
         <span>Kategori Produk</span>
       </a>
     </li>
@@ -140,7 +140,7 @@
     <!-- Data Produk -->
     <li class="nav-item">
       <a class="nav-link <?= ($page == 'data_produk.php') ? '' : 'collapsed' ?>" href="data_produk.php">
-        <i class="bi bi-box"></i>
+        <<i class="bi bi-journal-check"></i>
         <span>Data Produk</span>
       </a>
     </li>
@@ -148,7 +148,7 @@
     <!-- Laporan -->
     <li class="nav-item">
       <a class="nav-link <?= ($page == 'laporan.php') ? '' : 'collapsed' ?>" href="laporan.php">
-        <i class="bi bi-bar-chart-line"></i>
+        <i class="bi bi-window-stack"></i>
         <span>Laporan</span>
       </a>
     </li>
@@ -156,13 +156,14 @@
     <!-- Manajemen User -->
     <li class="nav-item">
       <a class="nav-link <?= ($page == 'user.php') ? '' : 'collapsed' ?>" href="user.php">
-        <i class="bi bi-people"></i>
+        <i class="bi bi-person-fill-gear"></i>
         <span>Manajemen User</span>
       </a>
     </li>
 
   </ul>
   </aside><!-- End Sidebar-->
+
 
   <main id="main" class="main">
 
