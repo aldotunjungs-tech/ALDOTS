@@ -1,3 +1,3 @@
 <?php
-$conn = mysqli_connect("localhosl","root","","25550037");
+$conn = mysqli_connect("localhost","root","","inventori_aldo");
 ?>
