@@ -1,4 +1,25 @@
-<?php $page = basename($_SERVER['PHP_SELF']); ?>
+<?php
+include 'koneksi.php';
+// total stok
+$total_item = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM products"));
+// Total transaksi barang masuk
+$total_barang_masuk = mysqli_num_rows(mysqli_query(
+  $conn,
+  "SELECT id FROM stock_logs WHERE change_type = 'ADD'"
+));
+
+// Total transaksi barang keluar
+$total_barang_keluar = mysqli_num_rows(mysqli_query(
+  $conn,
+  "SELECT id FROM stock_logs WHERE change_type = 'REDUCE'"
+));
+
+// Total item dengan stok kritis / minimum
+$total_stok_kritis = mysqli_num_rows(mysqli_query(
+  $conn,
+  "SELECT id FROM products WHERE stock <= min_stock"
+));
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,50 +132,45 @@
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
-  <ul class="sidebar-nav" id="sidebar-nav">
 
-    <!-- Dashboard -->
-    <li class="nav-item">
-      <a class="nav-link <?= ($page == 'index.php') ? '' : 'collapsed' ?>" href="index.php">
-        <i class="bi bi-house-gear-fill"></i>
-        <span>Dashboard</span>
-      </a>
-    </li>
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-    <!-- Kategori Produk -->
-    <li class="nav-item">
-      <a class="nav-link <?= ($page == 'kategory_produk.php') ? '' : 'collapsed' ?>" href="kategory_produk.php">
-       <i class="bi bi-bag-heart-fill"></i>
-        <span>Kategori Produk</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link " href="index.php">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="kategori_produk.php">
+          <i class="bi bi-tags"></i>
+          <span>Kategori Produk</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
-    <!-- Data Produk -->
-    <li class="nav-item">
-      <a class="nav-link <?= ($page == 'data_produk.php') ? '' : 'collapsed' ?>" href="data_produk.php">
-        <<i class="bi bi-journal-check"></i>
-        <span>Data Produk</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="produk.php">
+          <i class="bi bi-box-seam"></i>
+          <span>Data Produk</span>
+        </a>
+      </li><!-- End Data Produk Page Nav -->
 
-    <!-- Laporan -->
-    <li class="nav-item">
-      <a class="nav-link <?= ($page == 'laporan.php') ? '' : 'collapsed' ?>" href="laporan.php">
-        <i class="bi bi-window-stack"></i>
-        <span>Laporan</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="laporan.php">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Laporan</span>
+        </a>
+      </li><!-- End Laporan Page Nav -->
 
-    <!-- Manajemen User -->
-    <li class="nav-item">
-      <a class="nav-link <?= ($page == 'user.php') ? '' : 'collapsed' ?>" href="user.php">
-        <i class="bi bi-person-fill-gear"></i>
-        <span>Manajemen User</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="user.php">
+          <i class="bi bi-people"></i>
+          <span>Manajemen User</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+    </ul>
 
-  </ul>
-  </aside><!-- End Sidebar-->
+  </aside><!-- End Sidebar-->>
 
   <main id="main" class="main">
 
@@ -170,27 +186,75 @@
 
     <section class="section">
       <div class="row">
+        
+<!-- Laporan Stok Barang -->
         <div class="col-lg-6">
-
-          <div class="card">
+          <div class="card shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
-            </div>
+              <h5 class="card-title">Laporan Stok Barang</h5>
+              <p class="text-muted">Menampilkan seluruh data stok barang saat ini.</p>
+            
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="fw-bold text-primary">Total Item: <?= $total_item; ?></span>
+          <a href="laporan_stok.php" class="btn btn-sm btn-primary" target="_blank">
+            Lihat Produk
+            </a>
           </div>
-
+         </div>
         </div>
+      </div>
 
+      <!-- Laporan Barang Masuk -->
         <div class="col-lg-6">
-
-          <div class="card">
+          <div class="card shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
-            </div>
+              <h5 class="card-title">Laporan Barang Masuk</h5>
+              <p class="text-muted">Riwayat barang yang masuk ke gudang.</p>
+          
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="fw-bold text-primary">Total Transaksi: <?= $total_barang_masuk; ?></span>
+          <a href="laporan_barang_masuk.php" class="btn btn-sm btn-success" target="_blank">
+            Lihat Laporan
+            </a>
           </div>
-
+         </div>
         </div>
+      </div>
+
+      <!-- Laporan Barang Keluar -->
+        <div class="col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Laporan Barang Keluar</h5>
+              <p class="text-muted">Riwayat barang yang keluar dari gudang.</p>
+          
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="fw-bold text-primary">Total Transaksi: <?= $total_barang_keluar; ?></span>
+          <a href="laporan_barang_keluar.php" class="btn btn-sm btn-danger" target="_blank">
+            Lihat Laporan
+            </a>
+          </div>
+         </div>
+        </div>
+      </div>
+
+      <!-- Laporan Stok Minimum -->
+        <div class="col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Stok Minimum</h5>
+              <p class="text-muted">Barang dengan stok hampir habis.</p>
+          
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="fw-bold text-primary">Item Kritis: <?= $total_stok_kritis; ?></span>
+          <a href="laporan_stok_minimum.php" class="btn btn-sm btn-warning" target="_blank">
+            Lihat Laporan
+            </a>
+          </div>
+         </div>
+        </div>
+      </div>
+        
       </div>
     </section>
 
