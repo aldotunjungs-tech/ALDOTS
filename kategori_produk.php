@@ -156,11 +156,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Kategory Produk</h1>
+      <h1>Kategori Produk</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-          <li class="breadcrumb-item active">kategory produk</li>
+          <li class="breadcrumb-item active">Kategori Produk</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

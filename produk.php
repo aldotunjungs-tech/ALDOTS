@@ -30,13 +30,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -175,7 +168,7 @@
           <div class="card">
             <div class="card-body mt-3">
               <a href="t_produk.php" class="btn btn-primary">Tambah Data</a>
-              <a href="stok.php" class="btn btn-primary">Stok</a>
+              <a href="stok.php" class="btn btn-dark">Stok</a>
             </div>
           </div>
         </div>
