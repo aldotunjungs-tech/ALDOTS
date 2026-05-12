@@ -143,7 +143,7 @@
       </li><!-- End Laporan Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="user.php">
+        <a class="nav-link collapsed" href="users.php">
           <i class="bi bi-people"></i>
           <span>Manajemen User</span>
         </a>
@@ -170,9 +170,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Datatables</h5>
-              <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
-
+             
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
@@ -191,7 +189,7 @@
                   <?php
                   include "koneksi.php";
                   $no = 1;
-                  $sql = mysql_query($conn, "SELECT * FROM users");
+                  $sql = mysqli_query($conn, "SELECT * FROM users");
                   while ($data = mysqli_fetch_array($sql)) {
                     ?>
                     <tr>
