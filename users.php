@@ -164,6 +164,17 @@
       </nav>
     </div><!-- End Page Title -->
 
+    <div class="row">
+      <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body mt-3">
+          <a href="t_user.php" class="btn btn-primary">Tambah Data</a>
+        </div>
+      <div>
+    <div>
+  <div>
+
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
@@ -211,8 +222,8 @@
                       <td><?php echo date('d-m-Y H:i', strtotime($data['created_at'])); ?></td>
 
                       <td>
-                        <a href="e_user.php?id=<?php echo $data['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="h_user.php?id=<?php echo $data['id']; ?>"
+                        <a href="e_users.php?id=<?php echo $data['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="h_users.php?id=<?php echo $data['id']; ?>"
                           class="btn btn-danger btn-sm"
                           onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Hapus</a>
                         </td>
