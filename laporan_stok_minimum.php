@@ -61,7 +61,7 @@ $html = '
     </style>
 </head>
 <body>
-    <h1>Nama Sistem</h1>
+    <h1>Windows Warriors</h1>
     <hr>
     <h3>LAPORAN STOK MINIMUM</h3>
 
