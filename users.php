@@ -45,7 +45,7 @@ if (!isset($_SESSION['login'])) {
 
 <body>
 
-   <!-- ======= Header ======= -->
+    <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
@@ -107,126 +107,48 @@ if (!isset($_SESSION['login'])) {
         <!-- End Icons Navigation -->
 
     </header><!-- End Header -->
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="index.php" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Windows Warriors</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
 
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
 
-        <li class="nav-item dropdown pe-3">
+        <ul class="sidebar-nav" id="sidebar-nav">
 
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            
-          </a><!-- End Profile Iamge Icon -->
+            <li class="nav-item">
+                <a class="nav-link " href="index.php">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="kategori_produk.php">
+                    <i class="bi bi-tags"></i>
+                    <span>Kategori Produk</span>
+                </a>
+            </li><!-- End Profile Page Nav -->
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="produk.php">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Data Produk</span>
+                </a>
+            </li><!-- End Data Produk Page Nav -->
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="laporan.php">
+                    <i class="bi bi-bar-chart-line"></i>
+                    <span>Laporan</span>
+                </a>
+            </li><!-- End Laporan Page Nav -->
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="users.php">
+                    <i class="bi bi-people"></i>
+                    <span>Manajemen User</span>
+                </a>
+            </li><!-- End Register Page Nav -->
+        </ul>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
-      </ul>
-    </nav><!-- End Icons Navigation -->
-
-  </header><!-- End Header -->
-
-
-   <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <!-- Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link <?= ($page == 'index.php') ? '' : 'collapsed' ?>" href="index.php">
-          <i class="bi bi-speedometer2"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-
-      <!-- Kategori Produk -->
-      <li class="nav-item">
-        <a class="nav-link <?= ($page == 'kategori_produk.php') ? '' : 'collapsed' ?>" href="kategori_produk.php">
-          <i class="bi bi-tags"></i>
-          <span>Kategori Produk</span>
-        </a>
-      </li>
-
-      <!-- Data Produk -->
-      <li class="nav-item">
-        <a class="nav-link <?= ($page == 'produk.php') ? '' : 'collapsed' ?>" href="produk.php">
-          <i class="bi bi-box"></i>
-          <span>Data Produk</span>
-        </a>
-      </li>
-
-      <!-- Laporan -->
-      <li class="nav-item">
-        <a class="nav-link <?= ($page == 'laporan.php') ? '' : 'collapsed' ?>" href="laporan.php">
-          <i class="bi bi-bar-chart-line"></i>
-          <span>Laporan</span>
-        </a>
-      </li>
-
-      <!-- Manajemen User -->
-      <li class="nav-item">
-        <a class="nav-link <?= ($page == 'users.php') ? '' : 'collapsed' ?>" href="users.php">
-          <i class="bi bi-people"></i>
-          <span>Manajemen User</span>
-        </a>
-      </li>
-
-    </ul>
-
-  </aside><!-- End Sidebar-->
+    </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
