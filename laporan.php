@@ -141,7 +141,7 @@ $total_stok_kritis = mysqli_num_rows(mysqli_query(
       <li class="nav-item">
         <a class="nav-link <?= ($page == 'produk.php') ? '' : 'collapsed' ?>" href="produk.php">
           <i class="bi bi-box"></i>
-          <span>Produk</span>
+          <span>Data Produk</span>
         </a>
       </li>
 
