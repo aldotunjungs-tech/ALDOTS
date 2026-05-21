@@ -44,7 +44,7 @@ $data = query("
     JOIN products p ON sl.product_id = p.id
     JOIN categories c ON p.category_id = c.id
     LEFT JOIN users u ON sl.created_by = u.id
-    WHERE sl.change_type = 'ADD'
+    WHERE sl.change_type = 'REDUCE'
     ORDER BY sl.created_at DESC
 ");
 
