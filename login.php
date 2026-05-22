@@ -53,7 +53,7 @@ if (isset($_POST['login'])) {
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/windows warriors.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -87,7 +87,7 @@ if (isset($_POST['login'])) {
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
+                  <img src="assets/img/windows warriors.jpg" alt="">
                   <span class="d-none d-lg-block">Windows Warriors</span>
                 </a>
               </div><!-- End Logo -->
