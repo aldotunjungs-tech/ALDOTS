@@ -216,7 +216,7 @@ if (isset($_POST['update'])) {
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Vertical Form</h5>
+                            <h5 class="card-title">Tambah User</h5>
 
                             <!-- Vertical Form -->
 
